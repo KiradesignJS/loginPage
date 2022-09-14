@@ -1,2 +1,2 @@
 # loginPage
- Page og logging up
+ Page of logging up
