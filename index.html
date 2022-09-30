@@ -1,36 +1,88 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,800;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>LoginPage</title>
+    <title>Login</title>
 </head>
+
 <body class="body">
-    
-<div class="login_box">
-   <h2>Авторизуйтесь</h2>    
-    
-  <form>
-        
-    <div class="user_box">
-        <input type="text" name="" required="">
-        <label>Имя пользователя</label>    
+
+<div class="wrapper">
+
+   <div class="title-text">
+    <div class="title login">Login Form</div>
+    <div class="title signup">Signup Form</div>
+   </div>
+
+   <div class="form-container">
+
+    <div class="slide-controls">
+      <input type="radio" name="slider" id="login" checked>
+      <input type="radio" name="slider" id="signup">
+
+      <label for="login" class="slide login">Login</label>
+      <label for="signup" class="slide signup">Signup </label>
+      <div class="slide-tab"></div>
     </div>
-    
-    <div class="user_box">
-        <input type="password" name="" required="">
-        <label>Пароль</label>   
+
+    <div class="form-inner">
+      <form action="#" class="login">
+        <div class="field">
+          <input type="text" placeholder="Email Adress" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Password" required>
+        </div>
+        <div class="pass-link"><a href="#">Forgot password?</a></div>
+        <div class="field">
+          <input type="submit" value="Login">
+        </div>
+        <div class="signup-link">Not a member? <a href="#">Signup now</a></div>
+      </form>
+
+      <form action="#" class="signup">
+        <div class="field">
+          <input type="text" placeholder="Email Adress" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Password" required>
+        </div>
+        <div class="field">
+          <input type="password" placeholder="Confirm password" required>
+        </div>
+        <div class="field">
+          <input type="submit" value="Signup">
+        </div>
+      </form>
+
     </div>
-    
-    <div>
-        <a href="#" class="forgot_password">Забыли пароль?</a>
-    </div>
-    
-    <a class="btn_submit" href="#">
-        Войти
-    </a>
-  </form>
-   
+   </div>
+
 </div>
+
+<script>
+  const loginForm = document.querySelector("form.login");
+  const signupForm = document.querySelector("form.signup");
+  const loginBtn = document.querySelector("label.login");
+  const signupBtn = document.querySelector("label.signup");
+  const signupLink = document.querySelector(".signup-link a");
+  const loginText = document.querySelector(".title-text .login");
+  const signupText = document.querySelector(".title-text .signup");
+
+  signupBtn.onclick = (()=>{
+    loginForm.style.marginLeft = "-50%";
+    loginText.style.marginLeft = "-50%";
+  });
+  loginBtn.onclick = (()=>{
+    loginForm.style.marginLeft = "0%";
+    loginText.style.marginLeft = "0%";
+  });
+  signupLink.onclick = (()=>{
+    signupBtn.click();
+    return false;
+  });
+</script>
+
 </body>

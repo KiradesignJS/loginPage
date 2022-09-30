@@ -1,118 +1,174 @@
-.body {
-    
+*{
     margin: 0;
     padding: 0;
-    background: url(background.jpg) center no-repeat;
+    font-family: 'Montserrat';
 }
 
-* {
-    font-family: "Montserrat";
-}
-
-.login_box {
-    
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    padding: 40px;
-    transform: translate(-50%, -50%);
-    background: rgba(117, 102, 157, 0.85);
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-
-.login_box h2 {
-    
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.login_box .user_box {  
-    position: relative;
-}
-
-.login_box .user_box input {
-    
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-}
-
-.login_box .user_box label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: .3s;
-}
-
-.login_box .user_box input:focus~label,
-.login_box .user_box input:valid~label {
-    
-    top: -20px;
-    left: 0;
-    color: #fff;
-    font-size: 12px;
-}
-
-.forgot_password {
-    
-    font-size: 12px;
-    font-weight: 600;
-    color: #FFC89E;
-    float: right;
-}
-
-.forgot_password:hover {
-    
-    color: #fff;
-    text-decoration: none;
-
-}
-
-.btn_submit {
-    
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .3s;
-    margin-top: 20px;
-    letter-spacing: 1px;
-}
-
-.btn_submit:hover {
-    
-    background: #FFC89E;
-    color: #fff;
-    border-radius: 5px;
+html {
+  background: url(background.jpg) center no-repeat;
 }
 
 
 
+.wrapper {
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  
+  max-width: 390px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .title-text {
+  display: flex;
+  width: 200%;
+}
+
+.wrapper .title-text .title {
+  width: 50%;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: #a445b2;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+
+}
+
+.wrapper .form-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-container .slide-controls {
+  position: relative;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 30px 0 10px 0;
+  justify-content: space-between;
+  /*border: 1px solid lightblue;*/
+}
+
+.slide-controls .slide {
+  height: 100%;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 48px;
+  cursor: pointer;
+  z-index: 1;
+  color: #fff;
+  transition: all 0.6s ease;
+}
+
+.slide-controls .signup {
+  color: #fa4299;
+}
+
+.slide-controls .login {
+
+}
+
+.slide-controls .slide-tab {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 0;
+  z-index: 0;
+  background: #a445b2;
+  border-radius: 5px;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#signup:checked ~ .slide-tab {
+  left: 50%;
+}
+
+#signup:checked ~ .signup {
+  color: #fff;
+}
+
+#signup:checked ~ .login {
+  color: #a445b2;
+}
 
 
+.form-container .form-inner {
+  display: flex;
+  width: 200%;
+}
 
+.form-container .form-inner form {
+  width: 50%;
+  transition: all 0.6s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
 
+.form-inner form .field {
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+}
 
+.form-inner form .field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 17px;
+  border-style: none;
+  border-bottom: 2px solid lightgrey;
+  transition: all 0.4s ease;
+}
+
+.form-inner form .field input:focus {
+  border-color: #fa4299;
+}
+
+.form-inner form .pass-link {
+  margin-top: 15px;
+}
+
+.form-inner form .pass-link a,
+.form-inner form .signup-link a {
+  color: #fa4299;
+  text-decoration: none;
+}
+
+.pass-link {
+  font-size: 14px;
+}
+
+.form-inner form .signup-link{
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover {
+  text-decoration: underline;
+}
+
+form .field input[type="submit"] {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  border: none;
+  cursor: pointer;
+  background: -webkit-linear-gradient(left, #a445b2, #fa4444);
+}
 
 
