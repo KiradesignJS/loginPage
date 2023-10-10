@@ -1,14 +1,13 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat';
+    font-family: 'Montserrat', sans-serif;
 }
 
 html {
-  background: url(background.jpg) center no-repeat;
+  background: url(background.jpg) no-repeat;
+  background-size: 100%;
 }
-
-
 
 .wrapper {
   overflow: hidden;
@@ -71,10 +70,6 @@ html {
 
 .slide-controls .signup {
   color: #fa4299;
-}
-
-.slide-controls .login {
-
 }
 
 .slide-controls .slide-tab {
